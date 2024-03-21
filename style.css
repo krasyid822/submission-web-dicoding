@@ -1,0 +1,212 @@
+:root {
+  --color-dark-1: rgb(4, 13, 18);
+  --color-light-1: rgb(24, 61, 61);
+  --color-light-2: rgb(92, 131, 116);
+  --color-light-3: rgb(147, 177, 166);
+  --color-light-4: hsl(158, 16%, 94%);
+  --transition: all .3s ease;
+}
+
+/* General */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-block-start: 4rem;
+}
+
+body,
+button {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-dark-1);
+}
+
+header,
+section,
+footer {
+  max-width: 70rem;
+  margin: auto;
+  padding-inline: 1rem;
+}
+
+p {
+  color: var(--color-light-2);
+}
+
+.arrow {
+  background-image: url(./assets/images/arrow.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  right: .5rem;
+  top: calc(100% - 4rem);
+  width: 3.5rem;
+  height: 3.5rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+
+/* Header Section */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+  border-bottom: .1rem solid var(--color-light-3);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #FFF;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--color-dark-1);
+}
+
+header .logo {
+  font-size: 1.25rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+header nav ul li a {
+  transition: var(--transition);
+  text-underline-offset: .5rem;
+}
+
+header nav ul li a:hover {
+  color: var(--color-light-3);
+}
+
+/* Hero Section */
+#hero {
+  padding-block: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: .1rem solid var(--color-light-3);
+}
+
+.hero-img {
+  display: flex;
+  width: 45.5rem;
+}
+
+.hero-img-container {
+  width: 17.5rem;
+  height: 17.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border: .1rem solid var(--color-light-3);
+  box-sizing: border-box;
+}
+
+.hero-img-title {
+  margin-block-end: 1rem;
+}
+
+.sahur-img {
+  background-image: url(./assets/images/sahur.jpg);
+}
+
+.berbuka-img {
+  background-image: url(./assets/images/berbuka.jpg);
+  transform: translateX(-3.5rem);
+}
+
+.takjil-img {
+  background-image: url(./assets/images/takjil.jpg);
+  transform: translateX(-7rem);
+}
+
+.hero-text {
+  text-align: center;
+  margin-block-start: 1rem;
+}
+
+.hero-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-block-start: 1rem;
+}
+
+.btn {
+  border: .1rem solid var(--color-dark-1);
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  background-color: #FFF;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-left,
+.btn-right:hover {
+  color: var(--color-light-4);
+  background-color: var(--color-dark-1);
+}
+
+.btn-left:hover {
+  background-color: var(--color-light-1);
+}
+
+.btn-right:hover {
+  border-color: transparent;
+}
+
+/* Aside */
+aside {
+  border: .1rem solid var(--color-light-3);
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: var(--color-light-4);
+}
+
+aside h3 {
+  text-align: center;
+  margin-block-end: 1rem;
+}
+
+aside img {
+  width: 10rem;
+  height: 10rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: .5rem;
+  float: left;
+  margin-inline-end: 1rem;
+}
+
+aside p {
+  text-align: justify;
+}
+
+/* Takjil Section */
+.content {
+  margin-block: 1rem;
+  padding-bottom: 120rem;
+}
+
+.content .title {
+  text-align: center;
+}
+
+.content .title h1 {
+  font-size: 2rem;
+}

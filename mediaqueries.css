@@ -1,0 +1,58 @@
+@media screen and (max-width: 1024px) {
+  #hero {
+    flex-direction: column;
+  }
+
+  .hero-img {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sahur-img {
+    transform: translateX(3.5rem);
+  }
+
+  .berbuka-img {
+    transform: translateX(0);
+  }
+
+  .takjil-img {
+    transform: translateX(-3.5rem);
+  }
+
+  aside {
+    margin-block-start: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .logo {
+    font-size: 1rem;
+  }
+
+  .hero-img-container {
+    width: 35vw;
+    height: 35vw;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .arrow {
+    opacity: 1;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header .logo {
+    display: none;
+  }
+
+  header nav ul {
+    gap: 0;
+    width: 100vw;
+    justify-content: space-around;
+  }
+}

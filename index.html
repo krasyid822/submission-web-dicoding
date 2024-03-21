@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadhan Dishes</title>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="arrow" onclick="location.href = '/#'"></div>
+    <header>
+      <div class="logo">
+        <a href="#">Ramadhan Dishes</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#takjil">Takjil</a></li>
+          <li><a href="#berbuka">Berbuka</a></li>
+          <li><a href="#sahur">Sahur</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div class="hero-main">
+          <div class="hero-img">
+            <div class="hero-img-container sahur-img">
+              <span class="hero-img-title">Sahur</span>
+            </div>
+            <div class="hero-img-container berbuka-img">
+              <span class="hero-img-title">Berbuka</span>
+            </div>
+            <div class="hero-img-container takjil-img">
+              <span class="hero-img-title">Takjil</span>
+            </div>
+          </div>
+          <div class="hero-text">
+            <h2>Temukan hidangan untuk sahur dan berbuka di sini</h2>
+            <p>Kami hadir untuk membantu Anda menemukan pengalaman makan yang tak terlupakan di bulan suci Ramadan ini.</p>
+          </div>
+          <div class="hero-button-container">
+            <button class="btn btn-left" onclick="location.href = './#takjil'">Telusuri Menu</button>
+            <button class="btn btn-right" onclick="location.href = './#contact'">Pesan Sekarang</button>
+          </div>
+        </div>
+
+        <aside>
+          <h3>Tentang Ramadhan</h3>
+          <img src="assets/images/ramadhan.jpg" alt="Ramadhan" />
+          <p>
+            Ramadan adalah bulan kesembilan dalam kalender Hijriah. Pada bulan ini, umat Muslim di seluruh dunia melakukan ibadah puasa dan memperingati wahyu pertama yang turun kepada Nabi Muhammad menurut keyakinan umat Muslim. Puasa
+            Ramadan merupakan salah satu dari rukun Islam.
+          </p>
+        </aside>
+      </section>
+      <section id="takjil" class="content">
+        <div class="title">
+          <p>Menu Pembuka</p>
+          <h1>Takjil</h1>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
