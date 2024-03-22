@@ -5,15 +5,39 @@ window.addEventListener("scroll", () => {
   else arrow.style.opacity = 0;
 });
 
+function tanggal() {
+  const hariIndonesia = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  const bulanIndonesia = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+  const sekarang = new Date();
+  const hari = hariIndonesia[sekarang.getDay()];
+  const tanggal = sekarang.getDate();
+  const bulan = bulanIndonesia[sekarang.getMonth()];
+  const tahun = sekarang.getFullYear();
+
+  return `${hari}, ${tanggal} ${bulan} ${tahun}`;
+}
+
 const tanggalElement = document.querySelector(".tanggal");
 
-const hariIndonesia = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-const bulanIndonesia = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+tanggalElement.innerHTML = tanggal();
 
-const sekarang = new Date();
-const hari = hariIndonesia[sekarang.getDay()];
-const tanggal = sekarang.getDate();
-const bulan = bulanIndonesia[sekarang.getMonth()];
-const tahun = sekarang.getFullYear();
+// const contentTitle = document.querySelector(".content-title h1");
 
-tanggalElement.innerHTML = `${hari}, ${tanggal} ${bulan} ${tahun}`;
+// contentTitle.addEventListener("click", () => {
+
+// });
+document.body.addEventListener("click", (e) => {
+  if (e.target.classList.contains("content-main-title")) {
+    const parentElement = e.target.parentElement.parentElement;
+    const content = parentElement.querySelector(".content-container");
+    content.classList.toggle("closed");
+    if (content.classList.contains("closed")) {
+      content.style.height = "0";
+      document.querySelector(".expand").style.transform = "rotate(-180deg)";
+    } else {
+      content.style.height = `${content.scrollHeight}px`;
+      document.querySelector(".expand").style.transform = "rotate(0deg)";
+    }
+  }
+});
