@@ -55,4 +55,8 @@
     width: 100vw;
     justify-content: space-around;
   }
+
+  .tanggal-container {
+    justify-content: center;
+  }
 }

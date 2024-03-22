@@ -7,7 +7,7 @@
   --transition: all .3s ease;
 }
 
-/* General */
+/* General Style */
 * {
   padding: 0;
   margin: 0;
@@ -47,7 +47,13 @@ p {
   width: 3.5rem;
   height: 3.5rem;
   opacity: 0;
+  cursor: pointer;
   transition: var(--transition);
+}
+
+.arrow:hover {
+  filter: opacity(.65);
+  top: calc(100% - 4.5rem);
 }
 
 
@@ -61,7 +67,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: #FFF;
+  background-color: rgba(255, 255, 255, .75);
+  backdrop-filter: blur(.25rem);
 }
 
 header a {
@@ -195,6 +202,30 @@ aside img {
 
 aside p {
   text-align: justify;
+}
+
+.tanggal-container {
+  display: flex;
+}
+
+.ramadhan-button-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ramadhan-button {
+  text-align: center;
+  border-radius: .5rem;
+  padding: .5rem;
+  background-color: var(--color-light-2);
+  color: var(--color-light-4);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.ramadhan-button:hover {
+  background-color: var(--color-light-3);
 }
 
 /* Takjil Section */
