@@ -19,14 +19,8 @@ function tanggal() {
 }
 
 const tanggalElement = document.querySelector(".tanggal");
-
 tanggalElement.innerHTML = tanggal();
 
-// const contentTitle = document.querySelector(".content-title h1");
-
-// contentTitle.addEventListener("click", () => {
-
-// });
 document.body.addEventListener("click", (e) => {
   if (e.target.classList.contains("content-main-title")) {
     const parentElement = e.target.parentElement.parentElement;
@@ -40,4 +34,40 @@ document.body.addEventListener("click", (e) => {
       document.querySelector(".expand").style.transform = "rotate(0deg)";
     }
   }
+});
+
+const navbar = document.querySelector("header");
+const links = document.querySelectorAll("header nav ul li a");
+
+let prevScrollpos = window.scrollY;
+let scrolling = false;
+
+window.onscroll = function () {
+  if (!scrolling) {
+    let currentScrollPos = window.scrollY;
+    if (prevScrollpos > currentScrollPos) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = `calc(-${navbar.clientHeight}px - .1rem)`;
+    }
+    prevScrollpos = currentScrollPos;
+  }
+};
+
+links.forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const targetId = this.getAttribute("href").substring(1);
+
+    scrolling = true;
+
+    document.getElementById(targetId).scrollIntoView({
+      behavior: "smooth",
+    });
+
+    setTimeout(() => {
+      scrolling = false;
+    }, 1000);
+  });
 });

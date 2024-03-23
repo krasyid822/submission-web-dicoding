@@ -8,6 +8,23 @@
 }
 
 /* General Style */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light-4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-light-3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-light-2);
+}
+
+
 * {
   padding: 0;
   margin: 0;
@@ -69,6 +86,7 @@ header {
   z-index: 1;
   background-color: rgba(255, 255, 255, .75);
   backdrop-filter: blur(.25rem);
+  transition: var(--transition);
 }
 
 header a {
@@ -229,13 +247,14 @@ aside p {
 }
 
 /* Takjil Section */
-#takjil {
-  border-bottom: .1rem solid var(--color-light-3);
+.content {
   padding-block: 1rem;
 }
 
 .content-title {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content-title h1 {
@@ -243,9 +262,14 @@ aside p {
   margin-bottom: 1rem;
   cursor: pointer;
   user-select: none;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .content-title h1 .expand {
+  position: absolute;
+  left: -2rem;
   transition: var(--transition);
 }
 
@@ -253,7 +277,6 @@ aside p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1rem;
-  height: fit-content;
   overflow: hidden;
   transition: var(--transition);
 }
