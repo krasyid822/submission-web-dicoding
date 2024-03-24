@@ -43,7 +43,8 @@ button {
 
 header,
 section,
-footer {
+footer,
+.divider {
   max-width: 70rem;
   margin: auto;
   padding-inline: 1rem;
@@ -73,6 +74,11 @@ p {
   top: calc(100% - 4.5rem);
 }
 
+
+.divider {
+  border: none;
+  border-bottom: .1rem solid var(--color-light-3);
+}
 
 /* Header Section */
 header {
@@ -118,7 +124,6 @@ header nav ul li a:hover {
   padding-block: 1rem;
   display: flex;
   gap: 1rem;
-  border-bottom: .1rem solid var(--color-light-3);
 }
 
 .hero-img {
@@ -246,20 +251,17 @@ aside p {
   background-color: var(--color-light-3);
 }
 
-/* Takjil Section */
-.content {
-  padding-block: 1rem;
-}
-
+/* Content Section */
 .content-title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .content-title h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
   cursor: pointer;
   user-select: none;
   position: relative;
@@ -271,6 +273,7 @@ aside p {
   position: absolute;
   left: -2rem;
   transition: var(--transition);
+  opacity: .5;
 }
 
 .content-container {
@@ -315,3 +318,9 @@ aside p {
 .item-button:hover {
   background-color: var(--color-light-3);
 }
+
+#sahur .content-container {
+  margin-block-end: 1rem;
+}
+
+/* Contact Section */

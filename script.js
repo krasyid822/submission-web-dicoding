@@ -21,17 +21,22 @@ function tanggal() {
 const tanggalElement = document.querySelector(".tanggal");
 tanggalElement.innerHTML = tanggal();
 
+document.querySelectorAll(".content-container").forEach((content) => {
+  content.style.height = `${content.scrollHeight}px`;
+});
+
 document.body.addEventListener("click", (e) => {
   if (e.target.classList.contains("content-main-title")) {
     const parentElement = e.target.parentElement.parentElement;
     const content = parentElement.querySelector(".content-container");
     content.classList.toggle("closed");
+    const expand = e.target.querySelector(".expand");
     if (content.classList.contains("closed")) {
       content.style.height = "0";
-      document.querySelector(".expand").style.transform = "rotate(-180deg)";
+      expand.style.transform = "rotate(-180deg)";
     } else {
       content.style.height = `${content.scrollHeight}px`;
-      document.querySelector(".expand").style.transform = "rotate(0deg)";
+      expand.style.transform = "rotate(0deg)";
     }
   }
 });
@@ -42,32 +47,30 @@ const links = document.querySelectorAll("header nav ul li a");
 let prevScrollpos = window.scrollY;
 let scrolling = false;
 
-window.onscroll = function () {
+function handleScroll() {
   if (!scrolling) {
     let currentScrollPos = window.scrollY;
     if (prevScrollpos > currentScrollPos) {
       navbar.style.top = "0";
     } else {
-      navbar.style.top = `calc(-${navbar.clientHeight}px - .1rem)`;
+      navbar.style.top = `-${navbar.clientHeight}px`;
     }
     prevScrollpos = currentScrollPos;
   }
-};
+}
+
+window.addEventListener("scroll", handleScroll);
 
 links.forEach((link) => {
   link.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    const targetId = this.getAttribute("href").substring(1);
-
     scrolling = true;
-
-    document.getElementById(targetId).scrollIntoView({
-      behavior: "smooth",
-    });
-
     setTimeout(() => {
+      navbar.style.top = "0";
       scrolling = false;
-    }, 1000);
+      window.removeEventListener("scroll", handleScroll);
+      setTimeout(() => {
+        window.addEventListener("scroll", handleScroll);
+      }, 500);
+    }, 500);
   });
 });
