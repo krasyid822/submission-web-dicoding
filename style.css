@@ -388,12 +388,17 @@ footer {
 }
 
 .contact-form button {
-  padding: .5rem 1rem;
+  padding: 1rem;
   border: none;
   border-radius: .5rem;
   background-color: var(--color-light-2);
   color: var(--color-light-4);
   transition: var(--transition);
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: var(--color-light-3);
 }
 
 .contact-form select {
