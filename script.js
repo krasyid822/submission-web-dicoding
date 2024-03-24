@@ -21,10 +21,20 @@ function tanggal() {
 const tanggalElement = document.querySelector(".tanggal");
 tanggalElement.innerHTML = tanggal();
 
-document.querySelectorAll(".content-container").forEach((content) => {
-  if (!content.classList.contains("closed")) {
-    content.style.maxHeight = `${content.scrollHeight}px`;
-  }
+window.onload = () => {
+  document.querySelectorAll(".content-container").forEach((content) => {
+    if (!content.classList.contains("closed")) {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
+  });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".content-container").forEach((content) => {
+    if (!content.classList.contains("closed")) {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
+  });
 });
 
 window.addEventListener("resize", () => {

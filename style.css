@@ -350,6 +350,7 @@ footer {
   color: var(--color-light-4);
   border-top-left-radius: .5rem;
   border-bottom-left-radius: .5rem;
+  padding: 1rem;
 }
 
 .contact-info * {
