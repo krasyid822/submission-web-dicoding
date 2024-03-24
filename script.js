@@ -22,7 +22,17 @@ const tanggalElement = document.querySelector(".tanggal");
 tanggalElement.innerHTML = tanggal();
 
 document.querySelectorAll(".content-container").forEach((content) => {
-  content.style.height = `${content.scrollHeight}px`;
+  if (!content.classList.contains("closed")) {
+    content.style.maxHeight = `${content.scrollHeight}px`;
+  }
+});
+
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".content-container").forEach((content) => {
+    if (!content.classList.contains("closed")) {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
+  });
 });
 
 document.body.addEventListener("click", (e) => {
@@ -32,11 +42,13 @@ document.body.addEventListener("click", (e) => {
     content.classList.toggle("closed");
     const expand = e.target.querySelector(".expand");
     if (content.classList.contains("closed")) {
-      content.style.height = "0";
+      content.style.maxHeight = "0";
       expand.style.transform = "rotate(-180deg)";
+      if (parentElement.id === "sahur") content.style.paddingBlockEnd = "0";
     } else {
-      content.style.height = `${content.scrollHeight}px`;
+      content.style.maxHeight = `${content.scrollHeight}px`;
       expand.style.transform = "rotate(0deg)";
+      if (parentElement.id === "sahur") content.style.paddingBlockEnd = "1rem";
     }
   }
 });

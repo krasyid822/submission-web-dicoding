@@ -36,9 +36,16 @@ html {
 }
 
 body,
-button {
+button,
+input,
+textarea,
+select {
   font-family: "Poppins", sans-serif;
   color: var(--color-dark-1);
+}
+
+button {
+  font-size: 1rem;
 }
 
 header,
@@ -180,7 +187,6 @@ header nav ul li a:hover {
   border: .1rem solid var(--color-dark-1);
   padding: 1rem;
   border-radius: 2rem;
-  font-size: 1rem;
   background-color: #FFF;
   transition: var(--transition);
   cursor: pointer;
@@ -319,8 +325,83 @@ aside p {
   background-color: var(--color-light-3);
 }
 
+
 #sahur .content-container {
-  margin-block-end: 1rem;
+  padding-block-end: 1rem;
 }
 
 /* Contact Section */
+footer {
+  margin-block: 1rem;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-light-2);
+  color: var(--color-light-4);
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+
+.contact-info * {
+  color: var(--color-light-4);
+  text-decoration: none;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-form form {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  border: .1rem solid var(--color-light-3);
+  border-left: none;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  padding: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: .5rem;
+  border: .1rem solid var(--color-light-3);
+  border-radius: .5rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--color-light-4);
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: var(--color-light-2);
+  color: var(--color-light-4);
+  transition: var(--transition);
+}
+
+.contact-form select {
+  background-color: var(--color-light-4);
+  padding: .5rem;
+  border: .1rem solid var(--color-light-3);
+  border-radius: .5rem;
+  font-size: 1rem;
+  outline: none;
+  color: var(--color-light-1);
+}
